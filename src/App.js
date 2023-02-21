@@ -1,12 +1,18 @@
 import './App.css';
 import Mainpage from './Components/Main/main';
-
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Containt from './Components/secondpage/Containt';
 
 function App() {
   return (
-    <div className="App" style={{background:"#202124",height:"100%"}}>
-      <Mainpage/>
+    <BrowserRouter>
+    <div className="App" style={{background:"#202124",height:"100vh"}}>
+      <Routes>
+        <Route path='/' element={<Mainpage/>}/>
+        <Route path='/sanket' element={<Containt/>}/>
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 

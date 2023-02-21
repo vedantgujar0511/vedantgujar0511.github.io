@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import {useState} from "react";
 import { styled, alpha } from '@mui/material/styles';
-import { Divider, Link } from '@mui/material';
+import { Divider } from '@mui/material';
+import {Link} from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -26,7 +27,6 @@ const Search = styled('div')(({ theme }) => ({
 const SearchIconWrapper = styled('div')(({ theme }) => ({
     padding: theme.spacing(0, 2),
     height: '100%',
-    position: 'absolute',
     pointerEvents: 'none',
     display: 'flex',
     alignItems: 'center',
@@ -38,15 +38,17 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
     borderStyle: "solid",
     borderColor: "#4f5257",
     borderWidth:'1px',
-    backgroundColor: "none",
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.15),
-    },
+    backgroundColor: "#303134",
     margin: 0,
     width: '582.67px',
     [theme.breakpoints.down('sm')]:{
       width:"90%",
     }
+  }));
+  const Wrp = styled('div')(({ theme }) => ({
+    '&:hover': {
+      backgroundColor: "#3c4043",
+    },
   }));
   
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -66,37 +68,59 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 export const HelpSearch = (props) => {
     const [query, setQuery] = useState("");
+
+    // to close search bar when clicked outsided //
+    let dom=useRef();
+      useEffect(()=>{
+        let temphandler=(event)=>{
+          if(!dom.current.contains(event.target)){
+            props.setOpen(false);
+          }
+        };
+        document.addEventListener("mousedown",temphandler);
+        return ()=>{
+          document.removeEventListener("mousedown",temphandler);
+        };
+      })
+// // // // // // //
+
   return (
         <>
         {
           props.open?
-        <Wrapper style={{margin:"15px 0px 15px 0px"}}>
-        <div style={{display:'flex',position:'relative',height:'44px'}}>
-        <SearchIconWrapper>
-            <SearchIcon style={{color:"#4f5257"}}/>
+        <Wrapper style={{margin:"15px 0px 15px 0px"}} ref={dom} >
+        <div style={{display:'flex',position:'relative',height:'44px'}} >
+        <SearchIconWrapper style={{position: 'absolute'}}>
+            <SearchIcon style={{color:"#91979c"}}/>
         </SearchIconWrapper>
         <StyledInputBase
-          onFocus={()=>props.setOpen(true)}
-          onBlur={()=>props.setOpen(false)}
           placeholder=" "
+          autoFocus
+          autoComplete='true'
           inputProps={{ 'aria-label': 'search' }}
         />
         </div>
         <Divider style={{background:'#4f5257'}}/>
+        <p style={{fontFamily:'sans-serif',textAlign:"left",margin:'8px 0px 5px 20px',fontSize:'14px',color:'#91979c'}}>Related to recent searches</p>
           {props.options.map((option) => (
-                  <div className="search-option" type="button">
-                    <Link to={`/`}>{option.name}</Link>
-                  </div>
+            <Link to={`/sanket`} style={{color:'white', fontFamily:'sans-serif', textDecoration:'none'}}>
+                    <Wrp className="search-option" type="button" style={{display:'flex'}}>
+                    <SearchIconWrapper style={{margin:'8px 0px 7px 0px'}}>
+                      <SearchIcon style={{color:"#91979c",marginRight:'10px'}}/>
+                      {option.name}
+                    </SearchIconWrapper>
+                  </Wrp>
+                  </Link>
           ))}
         </Wrapper> 
           :
-          <Search style={{margin:"15px 0px 15px 0px"}}>
+          <Search style={{margin:"15px 0px 15px 0px"}} onFocus={()=>props.setOpen(true)} 
+          >
         <SearchIconWrapper>
-            <SearchIcon style={{color:"#4f5257"}}/>
+            <SearchIcon style={{color:"#91979c"}}/>
         </SearchIconWrapper>
         <StyledInputBase
-          onFocus={()=>props.setOpen(true)}
-          onBlur={()=>props.setOpen(false)}
+          
           placeholder=" "
           inputProps={{ 'aria-label': 'search' }}
         />
