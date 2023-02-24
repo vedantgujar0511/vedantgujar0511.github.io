@@ -11,11 +11,12 @@ import AppsIcon from '@mui/icons-material/Apps';
 import PersonIcon from '@mui/icons-material/Person';
 import ImageIcon from '@mui/icons-material/Image';
 import WorkIcon from '@mui/icons-material/Work';
-import { Divider } from '@mui/material';
-import { Link } from 'react-router-dom';
+import {   Divider } from '@mui/material';
+import { Link, useParams } from 'react-router-dom';
+import { useState } from 'react';
 
 
-const Search = styled('div')(({ theme }) => ({
+const Search = styled(Box)(({ theme }) => ({
 //   position: 'relative',
   borderRadius: "40px",
   backgroundColor: '#303134',
@@ -27,7 +28,7 @@ const Search = styled('div')(({ theme }) => ({
     width: '100%',
   },
 }));
-const StyledIcon = styled('div')(({ theme }) => ({
+const StyledIcon = styled(Box)(({ theme }) => ({
 [theme.breakpoints.down('sm')]:{
 display:"none"
 }
@@ -44,12 +45,12 @@ position:'relative',
     width: '80%',
   },
 }));
-const Styledsub = styled('div')(({ theme }) => ({
+const Styledsub = styled(Box)(({ theme }) => ({
     height: '100%',
     fontFamily:'sans-serif',
     fontSize:'14px',
     color:'white',
-    pointerEvents: 'none',
+    // pointerEvents: 'none',
     display: 'flex',
     margin:'20px 0 10px 100px',
     alignItems: 'center',
@@ -64,7 +65,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   marginLeft:'auto',
   height: '100%',
 //   position: 'absolute',
-  pointerEvents: 'none',
+  // pointerEvents: 'none',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -72,7 +73,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 const Logostyled = styled('img')(({ theme }) => ({
     marginLeft:'80px',
     height: '4vh',
-    pointerEvents: 'none',
+    // pointerEvents: 'none',
     [theme.breakpoints.down('sm')]:{
       marginLeft:'0px',
     }
@@ -103,6 +104,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 const Containt = () => {
+  const {id}=useParams();
+  const [id1, setid1] = useState(id);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar elevation={0} position="static" color="transparent">
@@ -111,11 +114,13 @@ const Containt = () => {
           <StyledLink to={`/`}><Logostyled src={Logo} alt='Logo-img'/></StyledLink>
           <Search>
             <StyledInputBase
-              placeholder=" "
+              // placeholder=" "
               inputProps={{ 'aria-label': 'search' }}
+              defaultValue={id1}
             />
             <SearchIconWrapper>
-                <ClearIcon sx={{ borderRight: 1 }} style={{padding:'0px 10px',color:'#93989e'}}/>
+              
+                <ClearIcon sx={{ borderRight: 1 }} onClick={()=>{setid1("")}} style={{padding:'0px 10px',color:'#93989e',cursor:'pointer'}} />
                 <SearchIcon  style={{padding:'0px 10px',color:'#8ab4f8'}}/>
             </SearchIconWrapper>
           </Search>
@@ -125,7 +130,7 @@ const Containt = () => {
           </StyledIcon>
         </StyledToolbar>
         <Styledsub >
-            <div style={{display:'flex',alignItems:'center',marginRight:'25px'}}> <SearchIcon  style={{color:'#8ab4f8',marginRight:'7px'}}/> All </div>
+            <div style={{display:'flex',alignItems:'center',marginRight:'25px'}} > <SearchIcon  style={{color:'#8ab4f8',marginRight:'7px'}}/> All </div>
             <div style={{display:'flex',alignItems:'center',marginRight:'25px'}}><ImageIcon style={{color:'#787c82',marginRight:'7px'}}/> Images</div>
             <div style={{display:'flex',alignItems:'center'}}><WorkIcon style={{color:'#787c82',marginRight:'7px'}}/>Project</div>
         </Styledsub>

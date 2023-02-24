@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import {useState} from "react";
 import { styled, alpha } from '@mui/material/styles';
 import { Divider } from '@mui/material';
 import {Link} from 'react-router-dom';
@@ -67,7 +66,6 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   }));
 
 export const HelpSearch = (props) => {
-    const [query, setQuery] = useState("");
 
     // to close search bar when clicked outsided //
     let dom=useRef();
@@ -103,7 +101,7 @@ export const HelpSearch = (props) => {
         <Divider style={{background:'#4f5257'}}/>
         <p style={{fontFamily:'sans-serif',textAlign:"left",margin:'8px 0px 5px 20px',fontSize:'14px',color:'#91979c'}}>Related to recent searches</p>
           {props.options.map((option) => (
-            <Link to={`/sanket`} style={{color:'white', fontFamily:'sans-serif', textDecoration:'none'}}>
+            <Link to={`/${option.name}`} style={{color:'white', fontFamily:'sans-serif', textDecoration:'none'}}>
                     <Wrp className="search-option" type="button" style={{display:'flex'}}>
                     <SearchIconWrapper style={{margin:'8px 0px 7px 0px'}}>
                       <SearchIcon style={{color:"#91979c",marginRight:'10px'}}/>
