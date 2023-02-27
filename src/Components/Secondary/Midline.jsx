@@ -39,12 +39,8 @@ const AccordionComponent = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                I enjoy reading fiction stories and philosophy. 
-                When I'm not reading for leisure, I spend my free time 
-                writing about random stuff. I also like listening to music,
-                especially jip hop, R&B and drill. My favorite artists are
-                Juice WRLD, Lil Tecca, JayDaYoungan, Yungeen Ace, SL, 
-                Meekz Manny and Fredo. 
+              I have a strong interest in solving data structure problems and exploring the field of web development.
+              When I'm not studying or working on my projects, I like to stay active by working out or playing sports. Additionally, I'm a pet owner and avid traveler, and I love spending my free time exploring new places.
               </Typography>
             </AccordionDetails>
           </StyledAccordion>
