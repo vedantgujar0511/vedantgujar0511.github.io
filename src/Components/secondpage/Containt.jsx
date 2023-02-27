@@ -10,26 +10,24 @@ import ClearIcon from '@mui/icons-material/Clear';
 import AppsIcon from '@mui/icons-material/Apps';
 import PersonIcon from '@mui/icons-material/Person';
 import ImageIcon from '@mui/icons-material/Image';
-import WorkIcon from '@mui/icons-material/Work';
 import {   Divider } from '@mui/material';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 
 const Search = styled(Box)(({ theme }) => ({
-//   position: 'relative',
   borderRadius: "40px",
   backgroundColor: '#303134',
   display:"flex",
   marginLeft: '6vh',
   width: '530px',
-  [theme.breakpoints.down('sm')]: {
-    // marginLeft: theme.spacing(1),
+  [theme.breakpoints.down('md')]: {
+    margin: 'auto',
     width: '100%',
   },
 }));
 const StyledIcon = styled(Box)(({ theme }) => ({
-[theme.breakpoints.down('sm')]:{
+[theme.breakpoints.down('md')]:{
 display:"none"
 }
 
@@ -39,33 +37,25 @@ marginTop:'15px',
 height:'100%',
 position:'relative',
 [theme.breakpoints.down('sm')]: {
-    // marginLeft: theme.spacing(1),
     marginTop:'8px',
     display:'flex', 
-    width: '80%',
   },
 }));
 const Styledsub = styled(Box)(({ theme }) => ({
     height: '100%',
-    fontFamily:'sans-serif',
-    fontSize:'14px',
-    color:'white',
-    // pointerEvents: 'none',
     display: 'flex',
     margin:'20px 0 10px 100px',
-    alignItems: 'center',
-    justifyContent: 'left',
-    [theme.breakpoints.down('sm')]:{
-      justifyContent:'center',
-      marginLeft:'0',
+
+    [theme.breakpoints.down('md')]:{
+      // justifyContent:'left',
+      marginLeft:'23px',
+      // margin:'auto',
     }
   }));
 const SearchIconWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(1.2, 0,0,0),
   marginLeft:'auto',
   height: '100%',
-//   position: 'absolute',
-  // pointerEvents: 'none',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -73,23 +63,25 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 const Logostyled = styled('img')(({ theme }) => ({
     marginLeft:'80px',
     height: '4vh',
-    // pointerEvents: 'none',
     [theme.breakpoints.down('sm')]:{
       marginLeft:'0px',
     }
   }));
 const StyledLink=styled(Link)(({theme})=>({
-  [theme.breakpoints.down('sm')]:{
+  [theme.breakpoints.down('md')]:{
     display:'none',
   }
 }));
 const StyledLinko=styled(Link)(({theme})=>({
-  margin:'2vh 0px 0px 0px',
+  marginTop:'2vh',
   alignContent:'center',
   alignItems:'center',
-  [theme.breakpoints.up('sm')]:{
+  [theme.breakpoints.up('md')]:{
     display:'none',
-  }
+  },
+  [theme.breakpoints.down('md')]:{
+    alignContent:'auto',
+  },
 }));
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   textAlign:'left',
@@ -103,9 +95,29 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     
   },
 }));
+const StyledTags=styled(Link)(({theme})=>({
+  display:'flex',
+  alignItems:'center',
+  textDecoration:'none',
+  fontFamily:'sans-serif',
+  fontSize:'14px',
+  color:'white',
+}));
+
 const Containt = () => {
-  const {id}=useParams();
-  const [id1, setid1] = useState(id);
+  const navigate = useNavigate();
+  const urlPathname = window.location.pathname;
+  var rx = /[^/](.*)/g;
+  var arr = rx.exec(urlPathname);
+  let val = "";
+  if (arr) {
+    val = arr[0];
+  }
+  const [searchInput, setSearchInput] = useState(val);
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchInput(e.target.value);
+  };
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar elevation={0} position="static" color="transparent">
@@ -116,12 +128,18 @@ const Containt = () => {
             <StyledInputBase
               // placeholder=" "
               inputProps={{ 'aria-label': 'search' }}
-              defaultValue={id1}
+              defaultValue={val}
+              value={searchInput}
+              onChange={handleChange}
+              onKeyPress={(e) => {
+                if(e.key==='Enter'){
+                  navigate(`/${searchInput}`);
+                }
+              }}
             />
             <SearchIconWrapper>
-              
-                <ClearIcon sx={{ borderRight: 1 }} onClick={()=>{setid1("")}} style={{padding:'0px 10px',color:'#93989e',cursor:'pointer'}} />
-                <SearchIcon  style={{padding:'0px 10px',color:'#8ab4f8'}}/>
+                <ClearIcon onClick={()=>setSearchInput("")} sx={{ borderRight: 1 }} style={{padding:'0px 10px',color:'#93989e',cursor:'pointer'}} />
+                <SearchIcon onClick={()=>navigate(`/${searchInput}`)} style={{padding:'0px 10px',color:'#8ab4f8',cursor:'pointer'}}/>
             </SearchIconWrapper>
           </Search>
           <StyledIcon style={{marginLeft:'auto'}}>
@@ -130,9 +148,17 @@ const Containt = () => {
           </StyledIcon>
         </StyledToolbar>
         <Styledsub >
-            <div style={{display:'flex',alignItems:'center',marginRight:'25px'}} > <SearchIcon  style={{color:'#8ab4f8',marginRight:'7px'}}/> All </div>
-            <div style={{display:'flex',alignItems:'center',marginRight:'25px'}}><ImageIcon style={{color:'#787c82',marginRight:'7px'}}/> Images</div>
-            <div style={{display:'flex',alignItems:'center'}}><WorkIcon style={{color:'#787c82',marginRight:'7px'}}/>Project</div>
+            {
+              val==="Images"?
+              <StyledTags to={'/Sanket'} style={{marginRight:'25px'}} > <SearchIcon  style={{color:'#787c82',marginRight:'7px'}}/> All </StyledTags>:
+              <StyledTags to={'/Sanket'} style={{marginRight:'25px',color:'#8ab4f8'}} > <SearchIcon  style={{color:'#8ab4f8',marginRight:'7px'}}/> All </StyledTags>
+            }
+            {
+              val==="Images"?
+              <StyledTags to={'/Images'} style={{marginRight:'25px',color:'#8ab4f8'}}><ImageIcon style={{color:'#8ab4f8',marginRight:'7px'}}/> Images</StyledTags>
+              :
+              <StyledTags to={'/Images'} style={{marginRight:'25px'}}><ImageIcon style={{color:'#787c82',marginRight:'7px'}}/> Images</StyledTags>
+            }
         </Styledsub>
         <Divider style={{background:'#4f5257'}}/>
       </AppBar>

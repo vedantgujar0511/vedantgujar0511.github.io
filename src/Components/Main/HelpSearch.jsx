@@ -3,7 +3,7 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import { Divider } from '@mui/material';
-import {Link} from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -66,7 +66,11 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   }));
 
 export const HelpSearch = (props) => {
-
+  
+  const handleChange = (e) => {
+    e.preventDefault();
+    props.setSearchInput(e.target.value);
+  };
     // to close search bar when clicked outsided //
     let dom=useRef();
       useEffect(()=>{
@@ -80,6 +84,7 @@ export const HelpSearch = (props) => {
           document.removeEventListener("mousedown",temphandler);
         };
       })
+      const navigate = useNavigate();
 // // // // // // //
 
   return (
@@ -96,6 +101,13 @@ export const HelpSearch = (props) => {
           autoFocus
           autoComplete='true'
           inputProps={{ 'aria-label': 'search' }}
+          onChange={handleChange}
+          value={props.searchInput}
+          onKeyPress={(e) => {
+            if(e.key==='Enter'){
+              navigate(`/${props.searchInput}`);
+            }
+          }}
         />
         </div>
         <Divider style={{background:'#4f5257'}}/>
@@ -112,13 +124,14 @@ export const HelpSearch = (props) => {
           ))}
         </Wrapper> 
           :
-          <Search style={{margin:"15px 0px 15px 0px"}} onFocus={()=>props.setOpen(true)} 
+        <Search style={{margin:"15px 0px 15px 0px"}} onFocus={()=>props.setOpen(true)} 
           >
-        <SearchIconWrapper>
+        <SearchIconWrapper style={{position: 'absolute'}}>
             <SearchIcon style={{color:"#91979c"}}/>
         </SearchIconWrapper>
         <StyledInputBase
-          
+          onChange={handleChange}
+          value={props.searchInput}
           placeholder=" "
           inputProps={{ 'aria-label': 'search' }}
         />
