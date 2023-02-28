@@ -7,7 +7,7 @@ import AppsIcon from '@mui/icons-material/Apps';
 import PersonIcon from '@mui/icons-material/Person';
 import Name from '../../images/sanket-logo.png'
 import Background from '../../images/background2.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Resume from '../../Resume/sanket_resume.pdf'
 
 const ButtonS=styled(Button)({
@@ -24,7 +24,6 @@ const Logostyled = styled('img')(({ theme }) => ({
 }));
 
 const Main = () => {
-  
     const options = [
         {
           name: "Sanket",
@@ -40,6 +39,7 @@ const Main = () => {
       ];
       const [open,setOpen]=useState(false);
       const [searchInput, setSearchInput] = useState("");
+      const navigate = useNavigate();
       
   return (
     <Grid style={{height:"100vh", alignItems:'center', backgroundImage:`url(${Background})`,backgroundRepeat:'no-repeat',backgroundSize:'100vw 100vh'}} >
@@ -55,8 +55,9 @@ const Main = () => {
             sx={{ mr: 2 }}
           >
             <Typography style={{color:"white",fontFamily:'sans-serif',cursor:'pointer'}} variant="subtitle2" component="div" sx={{ flexGrow: 1 }}
+            
             >
-                Email
+                <a href='mailto:sanketbaheti03@gmail.com' style={{textDecoration:'none', color:'inherit'}} target="_blank" rel="noopener noreferrer">Email</a>
             </Typography>
             <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1 }} style={{marginLeft:'20px', color:"white", fontFamily:'sans-serif'}}>
             <a href={Resume} download style={{textDecoration:'none', color:'inherit'}}>Resume</a>
@@ -77,11 +78,13 @@ const Main = () => {
             Search
         </ButtonS>
         </Link>
-        <ButtonS variant="contained" disableElevation>
+        <ButtonS variant="contained" disableElevation onClick={()=>navigate(`/Sanket`)}>
             I'm Feeling Lucky
         </ButtonS>
         </Grid>
       </Grid>
+      {
+        !open?
       <Grid>
       <Grid style={{position:'absolute',display:'flex', bottom: '0',left:'0',color:'white',padding:'10px 10px 30px 30px'}}>
         India
@@ -89,7 +92,9 @@ const Main = () => {
       <Grid style={{position:'absolute',display:'flex', bottom: '0',right:'0',color:'white',padding:'10px 30px 30px 30px'}}>
       Made by Sanket & Vedant
       </Grid>
-      </Grid>
+      </Grid>:
+      <div></div>
+      }
     </Grid>
   )
 }
