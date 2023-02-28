@@ -13,6 +13,9 @@ import ImageIcon from '@mui/icons-material/Image';
 import {   Divider } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import ProfileMenuDrop from '../Main/profileDropDown';
+import BoxMenuDrop from '../Main/appsDropDown';
+import { Button, IconButton, Typography } from '@mui/material';
 
 
 const Search = styled(Box)(({ theme }) => ({
@@ -143,8 +146,24 @@ const Containt = () => {
             </SearchIconWrapper>
           </Search>
           <StyledIcon style={{marginLeft:'auto'}}>
-            <AppsIcon style={{marginLeft:'20px',color:"white"}}/>
-            <PersonIcon style={{marginLeft:'20px',color:"white"}}/>
+          <IconButton
+            size="small"
+            edge="start"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            {/* <Typography style={{color:"white",fontFamily:'sans-serif',cursor:'pointer'}} variant="subtitle2" component="div" sx={{ flexGrow: 1 }}
+            
+            >
+                <a href='mailto:sanketbaheti03@gmail.com' style={{textDecoration:'none', color:'inherit'}} target="_blank" rel="noopener noreferrer">Email</a>
+            </Typography>
+            <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1 }} style={{marginLeft:'20px', color:"white", fontFamily:'sans-serif'}}>
+            <a href={Resume} download style={{textDecoration:'none', color:'inherit'}}>Resume</a>
+            </Typography> */}
+            <BoxMenuDrop style={{marginLeft:'20px',color:"white"}}/>
+            <ProfileMenuDrop/>
+          </IconButton>
+         
           </StyledIcon>
         </StyledToolbar>
         <Styledsub >

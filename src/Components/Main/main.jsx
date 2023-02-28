@@ -9,6 +9,8 @@ import Name from '../../images/sanket-logo.png'
 import Background from '../../images/background2.png'
 import { Link, useNavigate } from 'react-router-dom';
 import Resume from '../../Resume/sanket_resume.pdf'
+import ProfileMenuDrop from './profileDropDown';
+import BoxMenuDrop from './appsDropDown';
 
 const ButtonS=styled(Button)({
 background:"#303134",
@@ -62,8 +64,8 @@ const Main = () => {
             <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1 }} style={{marginLeft:'20px', color:"white", fontFamily:'sans-serif'}}>
             <a href={Resume} download style={{textDecoration:'none', color:'inherit'}}>Resume</a>
             </Typography>
-            <AppsIcon style={{marginLeft:'20px',color:"white"}}/>
-            <PersonIcon style={{marginLeft:'20px',color:"white"}} />
+            <BoxMenuDrop />
+            <ProfileMenuDrop />
           </IconButton>
         </Toolbar>
       </AppBar>

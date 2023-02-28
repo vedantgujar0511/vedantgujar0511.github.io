@@ -1,7 +1,7 @@
 export const Content = [
     {
       category: "about",
-      link: `${window.location.origin}/about#me`,
+      link: `${window.location.origin}/Myself`,
       name: "About Me",
       excerpt: `Hello, and welcome to my website! My name is Sanket Baheti, and I'm currently pursuing my studies at Bits Pilani in India. I have a strong interest in solving data structure problems.`
     },

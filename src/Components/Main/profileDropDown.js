@@ -1,10 +1,13 @@
-import "./ProfileDrop.css";
+import "./profileDropDown.css";
 import { Link } from "react-router-dom";
 import React, { useState, useRef, useEffect } from "react";
+import { PopupMenu } from "react-simple-widgets";
+import styled from "@emotion/styled";
+import Myimg from '../../images/myImage.jpeg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 
-const ProfileDrop = () => {
+export default function App() {
   const [isProfileActive, setProfileActive] = useState("false");
   // Toggle the dropdown
   const handleToggle = () => {
@@ -26,26 +29,24 @@ const ProfileDrop = () => {
       };
     }, [ref]);
   }
-
-  const wrapperProfileRef = useRef(null);
-  useOutsideHandler(wrapperProfileRef);
-
   return (
-    <div
-      className="profile dropdown"
-      onClick={handleToggle}
-      ref={wrapperProfileRef}
-    >
-      <img
-        className="profile-pic dropbtn"
-        src="https://i.pinimg.com/474x/ca/a9/35/caa9352cd119efe5641d6f7c3cc755fb.jpg"
-        alt="profile"
-      />
-      <div className="profile-hightlight-dropdown">
+    <div id="app"  >
+      <div className="text-end" >
+        <PopupMenu >
+          <button className="btn btn-primary" style={{background:'none',border:'none'}}>
+            <img
+          className="profile-pic dropbtn"
+          src={Myimg}
+          alt="profile"
+        />
+          </button>
+          <div style={{margin:'50px 12px 0 0' ,background:"white", width:"270px", borderRadius:"10px"}}>
+         
+      {/* <div className="profile-hightlight-dropdown">
         <p> Portfolio Website </p>
         <p> Enjeck Cleopatra </p>
         <p> enjeckc1e0@gmail.com </p>
-      </div>
+      </div> */}
       <div
         className={
           isProfileActive
@@ -56,12 +57,12 @@ const ProfileDrop = () => {
         <div className="first-detail">
           <img
             className=""
-            src="https://i.pinimg.com/474x/ca/a9/35/caa9352cd119efe5641d6f7c3cc755fb.jpg"
+            src={Myimg}
             alt="profile"
           />
-          <p className="detail-text"> Enjeck Cleopatra </p>
-          <p className="detail-text"> enjeckc1e0@gmail.com </p>
-          <a href="https://enjeck.com"> View Another Website Design </a>
+          <p className="detail-text"> Vedant Gujar </p>
+          <p className="detail-text"> vedantgujar0511@gmail.com </p>
+          {/* <a href="https://enjeck.com"> View Another Website Design </a> */}
         </div>
         <Link className="second-detail" to="/about">
           <FontAwesomeIcon className="fa-user-plus" icon={faUserPlus} />
@@ -72,11 +73,12 @@ const ProfileDrop = () => {
         </div>
         <div className="fourth-detail">
           <a href="https://github.com/PROTechThor/gfolio"> View code </a> <span> • </span>
-          <Link to="/blog"> Blog & news </Link>
+          <Link to="/blog"> Projects </Link>
         </div>
+      </div>
+          </div>
+        </PopupMenu>
       </div>
     </div>
   );
-};
-
-export default ProfileDrop;
+                }

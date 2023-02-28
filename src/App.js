@@ -7,7 +7,7 @@ import About from './Components/secondpage/About';
 import ProjectsPage from './Components/secondpage/Project';
 import Social from './Components/secondpage/Social';
 import NotFound from './Components/secondpage/NotFound';
-
+import AboutPage from './Components/Secondary/about';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/Project' element={<ProjectsPage/>}/>
         <Route path='/Social' element={<Social/>}/>
+        <Route path='/Myself' element={<AboutPage/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
     </div>
