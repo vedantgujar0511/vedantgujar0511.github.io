@@ -3,19 +3,19 @@ export const Content = [
       category: "about",
       link: `${window.location.origin}/Myself`,
       name: "About Me",
-      excerpt: `Hello, and welcome to my website! My name is Sanket Baheti, and I'm currently pursuing my studies at Bits Pilani in India. I have a strong interest in solving data structure problems.`
+      excerpt: `Hello, and welcome to my website! My name is Vedant Gujar currently pursuing my studies at Bits Pilani .From web development to software engineering, I have dedicated myself to mastering the art of creating innovative solutions that make a difference in people's lives.`
     },
     {
       category: "about",
       link: `${window.location.origin}/about#skills`,
       name: "An overview of my technical skills and interests",
-      excerpt: `HTML, CSS, JavaScript, React, C++, Node.js, Express.js, MongoDB, Operating system, Database Management System, OOPs, and System Design.`
+      excerpt: `HTML, CSS, JavaScript, React, C++, java, Node.js, Express.js, MongoDB, Operating system, Database Management System, OOPs, and System Design.`
     },
     {
       category: "works",
       link: "https://github.com/Sanket0303/Smart-AC-System-With-ALU",
-      name: "Smart Ac System with ALU",
-      excerpt: `The project is an intelligient Air Conditioner adjuster using Arduino as its hardward base. It makes the AC adjust the power of its motors according to the environment's temperature and atmosphere pressure.`
+      name: "Auto potholes detection on road",
+      excerpt: `This project is a deep learning model for detecting the potholes on road.`
     },
     {
       category: "works",
@@ -33,19 +33,19 @@ export const Content = [
   
     {
       category: "social",
-      link: "https://www.linkedin.com/in/sanket-baheti-b4b800214/",
+      link: "https://www.linkedin.com/in/vedant-gujar-177481192/",
       name: "LinkedIn",
       excerpt: `Connect and share experiences`
     },
     {
       category: "social",
-      link: "https://github.com/Sanket0303",
+      link: "https://github.com/vedantgujar0511",
       name: "GitHub",
       excerpt: `View my projects and code.`
     },
     {
       category: "social",
-      link: "https://leetcode.com/sanket_03/",
+      link: "https://leetcode.com/vedant_mg/",
       name: "LeetCode",
       excerpt: `Visit my profile to check out my streak.`
     },

@@ -28,7 +28,7 @@ const Logostyled = styled('img')(({ theme }) => ({
 const Main = () => {
     const options = [
         {
-          name: "Sanket",
+          name: "Vedant",
           value: "all"
         },
         {
@@ -59,7 +59,7 @@ const Main = () => {
             <Typography style={{color:"white",fontFamily:'sans-serif',cursor:'pointer'}} variant="subtitle2" component="div" sx={{ flexGrow: 1 }}
             
             >
-                <a href='mailto:sanketbaheti03@gmail.com' style={{textDecoration:'none', color:'inherit'}} target="_blank" rel="noopener noreferrer">Email</a>
+                <a href='mailto:vedantgujar0511@gmail.com' style={{textDecoration:'none', color:'inherit'}} target="_blank" rel="noopener noreferrer">Email</a>
             </Typography>
             <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1 }} style={{marginLeft:'20px', color:"white", fontFamily:'sans-serif'}}>
             <a href={Resume} download style={{textDecoration:'none', color:'inherit'}}>Resume</a>
@@ -80,7 +80,7 @@ const Main = () => {
             Search
         </ButtonS>
         </Link>
-        <ButtonS variant="contained" disableElevation onClick={()=>navigate(`/Sanket`)}>
+        <ButtonS variant="contained" disableElevation onClick={()=>navigate(`/Vedant`)}>
             I'm Feeling Lucky
         </ButtonS>
         </Grid>

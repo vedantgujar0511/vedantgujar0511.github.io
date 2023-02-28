@@ -40,7 +40,7 @@ const AccordionComponent = () => {
             <AccordionDetails>
               <Typography>
               I have a strong interest in solving data structure problems and exploring the field of web development.
-              When I'm not studying or working on my projects, I like to stay active by working out or playing sports. Additionally, I'm a pet owner and avid traveler, and I love spending my free time exploring new places.
+              When I'm not studying or working on my projects, I like to stay active by working out or playing sports. Additionally, I'm a avid traveler, and I love spending my free time exploring new places.
               </Typography>
             </AccordionDetails>
           </StyledAccordion>
@@ -73,7 +73,7 @@ const AccordionComponent = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-               Definitely email. Contact me at sanketbaheti03@gmail.com.
+               Definitely email. Contact me at vedantgujar0511@gmail.com.
               </Typography>
             </AccordionDetails>
           </StyledAccordion>
