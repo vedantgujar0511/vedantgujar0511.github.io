@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6de5760a.css",
+    "main.js": "/static/js/main.2dbd12f8.js",
+    "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
+    "static/media/background2.png": "/static/media/background2.8c219db6444a313275e2.png",
+    "static/media/myImage.jpeg": "/static/media/myImage.5e9b4796f77eab8b51ec.jpeg",
+    "static/media/bpgc1.jpg": "/static/media/bpgc1.6cf35b87b32775beead4.jpg",
+    "static/media/Profile.jpg": "/static/media/Profile.7c0630eff1614ccd828b.jpg",
+    "static/media/sanket_resume.pdf": "/static/media/sanket_resume.2c3391f2d4b2778c4a1f.pdf",
+    "static/media/vedant-logo.png": "/static/media/vedant-logo.4c3724639c2bbb42626a.png",
+    "static/media/suitcase.png": "/static/media/suitcase.e14b0bb3d0624bcc8e9b.png",
+    "static/media/info.png": "/static/media/info.df5172754eb4e8e0472f.png",
+    "static/media/flipkart1.png": "/static/media/flipkart1.620710a8b9a33de944b5.png",
+    "index.html": "/index.html",
+    "main.6de5760a.css.map": "/static/css/main.6de5760a.css.map",
+    "main.2dbd12f8.js.map": "/static/js/main.2dbd12f8.js.map",
+    "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6de5760a.css",
+    "static/js/main.2dbd12f8.js"
+  ]
+}
