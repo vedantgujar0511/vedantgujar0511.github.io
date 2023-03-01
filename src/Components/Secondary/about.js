@@ -124,21 +124,21 @@ const AboutPage = () => {
            
                 <div className = "greeting-image1" style={{backgroundColor :'#000',display:'flex'}}>
                 
-                    <div style={{backgroundColor:'#000',width:'60px',marginTop:'165px',marginBottom:'162px',border: '0.5rem solid #E9E4D9',borderRight:'none',borderLeft:'none'}}></div>
+                    <div style={{backgroundColor:'#000',width:'60px',marginTop:'165px',marginBottom:'115px',border: '0.5rem solid #E9E4D9',borderRight:'none',borderLeft:'none'}}></div>
                     <img alt = "my-image" src ={Myimg} style={{
                         width:'60%', 
                         borderRadius: '20px', 
                         border: '0.5rem solid #E9E4D9', 
-                        marginTop:'100px',
+                        marginTop:'120px',
                         // marginBottom:'400px',
                         marginRight: '0px',
                         maxWidth: '400px',
-                        height: '70vh',
+                        height: '73vh',
                         boxShadow: 'rgb(192,192,192,0.6) 0 30px 30px -30px',
                         transition: 'all 0.3s ease-out'
                         }}></img>
 
-                    <div style={{backgroundColor:'#000',width:'150px',marginTop:'165px',marginBottom:'162px',border: '0.5rem solid #E9E4D9',marginLeft:'0px',borderLeft:'none'}}></div>
+                    <div style={{backgroundColor:'#000',width:'150px',marginTop:'165px',marginBottom:'115px',border: '0.5rem solid #E9E4D9',marginLeft:'0px',borderLeft:'none'}}></div>
                 </div>
                 
         </div>
