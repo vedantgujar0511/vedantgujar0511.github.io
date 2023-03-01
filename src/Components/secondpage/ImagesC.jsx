@@ -29,7 +29,7 @@ const ImagesC = () => {
     <Containt/>
     <Grid container style={{}}>
       <Grid item style={{color:'white',fontFamily:'sans-serif',display:'flex',flexDirection:'column', alignItems:'left',margin:'3vh'}}>
-        <Link to={`https://www.linkedin.com/in/sanket-baheti-b4b800214/`} style={{textDecoration:'none', color:'inherit'}}>
+        <Link to={`https://www.linkedin.com/in/vedant-gujar-177481192/`} style={{textDecoration:'none', color:'inherit'}}>
         <StyledImg src={Profile} alt='Img'/>
         <div style={{fontSize:'12px', display:'flex',flexDirection:'column',margin:'0px',alignItems:'left'}}>
         <div style={{display:'flex', alignItems:'center',marginTop:'2px'}}><LinkedInIcon style={{color:'#1976d2',height:'15px'}}/><div style={{padding:0}}>LinkedIn</div></div>

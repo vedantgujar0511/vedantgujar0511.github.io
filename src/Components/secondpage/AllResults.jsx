@@ -27,7 +27,7 @@ const StyledP=styled('p')(({theme})=>({
 const Details = () => {
   const all = Content;
   const first = Content.slice(0, 1);
-  const theRest = Content.slice(1);
+  const theRest = Content.slice(0,1);
   return (
     <div style={{alignItems:'center'}}>
       <Containt/>

@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import Logo from '../../images/sanket-logo.png'
+import Logo from '../../images/vedant-logo.png'
 import ClearIcon from '@mui/icons-material/Clear';
 import AppsIcon from '@mui/icons-material/Apps';
 import PersonIcon from '@mui/icons-material/Person';
@@ -169,8 +169,8 @@ const Containt = () => {
         <Styledsub >
             {
               val==="Images"?
-              <StyledTags to={'/Sanket'} style={{marginRight:'25px'}} > <SearchIcon  style={{color:'#787c82',marginRight:'7px'}}/> All </StyledTags>:
-              <StyledTags to={'/Sanket'} style={{marginRight:'25px',color:'#8ab4f8'}} > <SearchIcon  style={{color:'#8ab4f8',marginRight:'7px'}}/> All </StyledTags>
+              <StyledTags to={'/Vedant'} style={{marginRight:'25px'}} > <SearchIcon  style={{color:'#787c82',marginRight:'7px'}}/> All </StyledTags>:
+              <StyledTags to={'/Vedant'} style={{marginRight:'25px',color:'#8ab4f8'}} > <SearchIcon  style={{color:'#8ab4f8',marginRight:'7px'}}/> All </StyledTags>
             }
             {
               val==="Images"?

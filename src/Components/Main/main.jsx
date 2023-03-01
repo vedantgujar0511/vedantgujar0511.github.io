@@ -5,7 +5,7 @@ import { HelpSearch } from './HelpSearch';
 import { AppBar, Button, IconButton, Toolbar, Typography, styled } from '@mui/material';
 import AppsIcon from '@mui/icons-material/Apps';
 import PersonIcon from '@mui/icons-material/Person';
-import Name from '../../images/sanket-logo.png'
+import Name from '../../images/vedant-logo.png'
 import Background from '../../images/background2.png'
 import { Link, useNavigate } from 'react-router-dom';
 import Resume from '../../Resume/sanket_resume.pdf'

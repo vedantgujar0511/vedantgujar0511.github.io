@@ -34,7 +34,7 @@ const NotFound = () => {
         <div className="suggest">
           <p> Did you mean: </p>
           <div className="suggestions">
-            <Link to="/All" style={{color: '#4b82d7'}}> Sanket </Link>
+            <Link to="/All" style={{color: '#4b82d7'}}> Vedant </Link>
             <Link to="/about" style={{color: '#4b82d7'}}> About </Link>
             <Link to="/Project" style={{color: '#4b82d7'}}> Project </Link>
             <Link to="/Images" style={{color: '#4b82d7'}}> Images </Link>

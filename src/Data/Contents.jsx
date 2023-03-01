@@ -13,20 +13,20 @@ export const Content = [
     },
     {
       category: "works",
-      link: "https://github.com/Sanket0303/Smart-AC-System-With-ALU",
+      link: "https://github.com/vedantgujar0511/potholes-detection",
       name: "Auto potholes detection on road",
       excerpt: `This project is a deep learning model for detecting the potholes on road.`
     },
     {
       category: "works",
-      link: `https://github.com/Sanket0303/Sanket0303.github.io`,
+      link: `https://github.com/vedantgujar0511/vedantgujar-portfolio`,
       name: "Personal Website",
       excerpt: `A personal website simulating the Google Search platform. Developed with
       HTML, CSS and React`
     },
     {
       category: "works",
-      link: "https://github.com/Sanket0303/FlipKart-Clone",
+      link: "kmmjwxmj",
       name: "Flipkart clone",
       excerpt: ` I have created a website that offers a similar experience to the popular e-commerce platform Flipkart. I designed our website to be user-friendly and intuitive, with easy navigation and a simple checkout process. Users can create accounts, save their favorite products. I have used MERN stack to build this website.`
     },
