@@ -8,7 +8,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import Name from '../../images/vedant-logo.png'
 import Background from '../../images/background2.png'
 import { Link, useNavigate } from 'react-router-dom';
-import Resume from '../../Resume/sanket_resume.pdf'
+import Resume from '../../Resume/Vedant_resume.pdf'
 import ProfileMenuDrop from './profileDropDown';
 import BoxMenuDrop from './appsDropDown';
 

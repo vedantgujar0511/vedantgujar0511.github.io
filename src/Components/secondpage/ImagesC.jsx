@@ -1,5 +1,5 @@
 import React from 'react'
-import Profile from '../../images/Profile.jpg';
+import Profile from '../../images/Profile.jpeg';
 import BPGC from '../../images/BPGC.jpg'
 import BPGCM from '../../images/bpgc1.jpg'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
